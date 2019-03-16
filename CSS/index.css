@@ -1,1 +1,321 @@
-index.css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'poppins';
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(233,217,217,1);
+}
+
+  header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(233,217,217,0.98);
+  box-shadow: 0px 4px 5px 1px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 35px
+}
+
+.logo-container {
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+}
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.navigation > ul {
+}
+.navigation > ul > li {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.navigation > ul > li > a{
+  color: black;
+  font-size: 25px;
+}
+
+.navigation > ul > li > a:hover {
+  color: #412525;
+}
+
+/*Anchor tag animation*/
+.navigation > ul > li > a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #cfafaf;
+  transform: scale(0, 1);
+  transition: transform ease-in-out 0.25s;
+}
+.navigation > ul > li > a:hover::after {
+  transform: scale(1, 1);
+}
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15em;
+  width: 25em;
+}
+
+.slider li {
+  list-style: none;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25em;
+}
+
+.slider img {
+  transition: .15s ease;
+  height: 15em;
+  width: 15em;
+  vertical-align: top;
+ 
+}
+
+.slider input {
+  display: none;
+}
+
+.slider label {
+  background-color: #fff;
+  bottom: 5px;
+  cursor: pointer;
+  display: block;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.slider li:nth-child(1) label {
+  left: 9.5em;
+}
+.slider li:nth-child(2) label {
+  left: 11em;
+}
+.slider li:nth-child(3) label {
+  left: 12.5em;
+}
+.slider li:nth-child(4) label {
+  left: 14em;
+}
+.slider img {
+  opacity: 0;
+  visibility: hidden;
+}
+.slider li input:checked ~ img {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.slider li input:checked ~ label {
+  background-color: black;
+  border: solid 2px white;
+  -webkit-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  transition: 0.15s ease;
+}
+.left-trigger {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 5px;
+  z-index: 12;
+}
+
+.right-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 25px;
+  height: 40px;
+  background-color: green;
+  z-index: 12;
+  border-radius: 5px;
+}
+.right-trigger:hover {
+  cursor: pointer;
+}
+.right-top {
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.right-bottom {
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.left-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 25px;
+  height: 40px;
+  background-color: green;
+  border-radius: 5px;
+}
+.left-trigger:hover {
+  cursor: pointer;
+}
+.left-top {
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.left-bottom {
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.main-content{
+  height: 100%;
+  width: 100%;
+  border: solid 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*Media queries*/
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+
+.hamburger-wrap {
+  background-color: rgba(233,217,217,1);
+  padding: 15px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-color: black;
+  box-shadow: 0 0 10px black;
+}
+.hamburger-wrap:hover {
+  cursor: pointer;
+  outline: none;
+  border-color: grey;
+  box-shadow: 0 0 10px grey;
+}
+.hamburger {
+  width: 30px;
+  height: 5px;
+  background: black;
+  display: block;
+  margin-top: 5px;
+  border-radius: 9px;
+  transition: transform 200ms;
+  position: relative;
+}
+
+.hamburger.hamburger-1.open {
+  top: 10px;
+  transform: rotate(135deg);
+}
+.hamburger.hamburger-2.open {
+  display: none;
+}
+.hamburger.hamburger-3.open {
+  bottom: 0px;
+  transform: rotate(-135deg);
+}
+.navigation {
+  position: absolute;
+  right: -1000%;
+  display: none;
+}
+.navigation.open {
+  box-shadow: 0px 4px 5px 1px;
+  width: 250px;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  background: #f5efef;
+}
+  .navigation > ul > li {
+    display: block;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }
