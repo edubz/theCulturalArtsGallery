@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../CSS/validationStyleSheet.css">
+    <title></title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="firstname">First Name : </label>
+            <input type="text" name="firstname" id="firstname" class="required alphabetic" /> Required Field
+        </div>
+        <div>
+            <label for="lastname">Last Name : </label>
+            <input type="text" name="lastname" id="lastname" class="required alphabetic" /> Required Field
+        </div>
+        <div>
+            <label for="zip">Zip Code : </label>
+            <input type="text" name="zip" id="zip" class="numeric required_size" minlength="5" /> Number, Minimum Length 5
+        </div>
+    </form>
+</body>
+</html>
