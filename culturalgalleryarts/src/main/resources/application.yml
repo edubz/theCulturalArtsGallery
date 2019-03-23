@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      database: CAG
+      port: 27017
+server:
+  port: 8082
