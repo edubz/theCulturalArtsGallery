@@ -1,4 +1,4 @@
-package com.culturalgalleryarts.Interfaces;
+package com.culturalgalleryarts.interfaces;
 
 import com.culturalgalleryarts.Domains.Customer;
 import org.bson.types.ObjectId;
@@ -10,6 +10,6 @@ public interface CustomerInterface {
 
     public List<Customer> getAllCustomers();
     public Customer addCustomer(Customer customer);
-    public void deleteCustomersByName(String name);
+    public void deleteCustomerById(ObjectId id);
     public Customer getCustomerById(ObjectId id);
 }

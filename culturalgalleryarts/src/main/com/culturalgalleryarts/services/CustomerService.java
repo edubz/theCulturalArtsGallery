@@ -1,8 +1,8 @@
-package com.culturalgalleryarts.Services;
+package com.culturalgalleryarts.services;
 
 import com.culturalgalleryarts.Domains.Customer;
-import com.culturalgalleryarts.Interfaces.CustomerInterface;
-import com.culturalgalleryarts.Repositories.CustomerRepository;
+import com.culturalgalleryarts.interfaces.CustomerInterface;
+import com.culturalgalleryarts.repositories.CustomerRepository;
 import com.culturalgalleryarts.exceptions.ServerError;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +42,9 @@ public class CustomerService implements CustomerInterface {
     }
 
     @Override
-    public void deleteCustomersByName(String name) {
+    public void deleteCustomerById(ObjectId id) {
         try {
-            customerRepo.deleteByName(name);
+            customerRepo.deleteById(id);
         } catch(DataAccessResourceFailureException e) {
             throw new ServerError(SERVER_ERROR_MESSAGE);
         }

@@ -1,14 +1,9 @@
-package com.culturalgalleryarts.Controllers;
+package com.culturalgalleryarts.controllers;
 
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.swing.text.html.HTML;
-import javax.swing.text.html.HTMLDocument;
 
 @Controller
 public class HomeController {
@@ -26,6 +21,11 @@ public class HomeController {
     @RequestMapping("/shop")
     public String showShop(Model model){
         return "shop.html";
+
+    }
+    @RequestMapping("/information")
+    public String showInfo(Model model){
+        return "informationTab.html";
 
     }
 }

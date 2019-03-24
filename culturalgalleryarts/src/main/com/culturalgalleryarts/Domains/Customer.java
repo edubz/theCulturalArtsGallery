@@ -1,16 +1,13 @@
 package com.culturalgalleryarts.Domains;
 
 import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 
 @Document(collection = "customers")
 public class Customer {
+
     @Id
     private ObjectId id;
     private String name;

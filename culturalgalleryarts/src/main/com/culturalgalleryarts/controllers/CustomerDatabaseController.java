@@ -1,9 +1,8 @@
-package com.culturalgalleryarts.Controllers;
+package com.culturalgalleryarts.controllers;
 
 
 import com.culturalgalleryarts.Domains.Customer;
-import com.culturalgalleryarts.Interfaces.CustomerInterface;
-import com.culturalgalleryarts.Services.CustomerService;
+import com.culturalgalleryarts.interfaces.CustomerInterface;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,12 +28,12 @@ public class CustomerDatabaseController {
         return customerService.getAllCustomers();
     }
 
-    @GetMapping(value = "/id")
-    public Customer getCustomerById(@RequestParam ObjectId id){return customerService.getCustomerById(id);}
+    @GetMapping(value = "/{id}")
+    public Customer getCustomerById(@PathVariable ObjectId id){return customerService.getCustomerById(id);}
 
-    @DeleteMapping
-    public ResponseEntity<Customer> deleteCustomerByName(@RequestParam String name) {
-        customerService.deleteCustomersByName(name);
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Customer> deleteCustomerById(@PathVariable ObjectId id) {
+        customerService.deleteCustomerById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
