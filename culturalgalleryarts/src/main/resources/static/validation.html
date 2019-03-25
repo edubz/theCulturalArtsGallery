@@ -4,22 +4,38 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../CSS/validationStyleSheet.css">
-    <title></title>
+    <title>Purchase</title>
 </head>
 <body>
-    <form>
+    <form  method="POST" action="/checkout">
         <div>
-            <label for="firstname">First Name : </label>
-            <input type="text" name="firstname" id="firstname" class="required alphabetic" /> Required Field
+            <label for="name" >Name : </label>
+            <input type="text" name="name" id="name"/> Required Field
         </div>
         <div>
-            <label for="lastname">Last Name : </label>
-            <input type="text" name="lastname" id="lastname" class="required alphabetic" /> Required Field
+            <label for="email" >Email : </label>
+            <input type="text" name="email" id="email"/> Required Field
         </div>
         <div>
-            <label for="zip">Zip Code : </label>
-            <input type="text" name="zip" id="zip" class="numeric required_size" minlength="5" /> Number, Minimum Length 5
+            <label for="street" >Street : </label>
+            <input type="text" name="street" id="street"/> Required Field
+        </div>
+        <div>
+            <label for="city" >City : </label>
+            <input type="text" name="city" id="city"/> Required Field
+        </div>
+        <div>
+            <label for="state" >State : </label>
+            <input type="text" name="state" id="state"/> Required Field
+        </div>
+        <div>
+            <label for="zip" >Zip Code : </label>
+            <input type="text" name="zip" id="zip"/> Required Field
+        </div>
+        <div>
+            <input type="submit" name="submitBtn" value="Validate">
         </div>
     </form>
+<script type="text/javascript" src="../JS/validate.js"></script>
 </body>
 </html>
